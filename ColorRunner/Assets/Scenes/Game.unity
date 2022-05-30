@@ -310,7 +310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751987368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: -0.634}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -459,6 +459,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wayPartPrefab: {fileID: 1483898176261952205, guid: 06fa7f72c3038a74086c704cce594bcd, type: 3}
+  _colors:
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 1, g: 0.5019608, b: 0, a: 0}
+  - {r: 1, g: 1, b: 0, a: 0}
+  - {r: 0, g: 1, b: 0, a: 0}
+  - {r: 0, g: 1, b: 1, a: 0}
 --- !u!4 &1528486437
 Transform:
   m_ObjectHideFlags: 0
