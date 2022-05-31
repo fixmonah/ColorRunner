@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +8,12 @@ public class WayGenerator : MonoBehaviour
     [SerializeField] private WayPart _wayPartPrefab;
     [SerializeField] private Color[] _colors;
 
+    public Action<Color> ActionColorSelected;
+    public Action<Color> ActionPlayerTouchColorObject;
+
     private Color _selectedColor = Color.black;
-
     private WayPart[] _wayParts = new WayPart[3];
-    private WayPart _lastWayPart;
-
+    private WayPart _lastWayPart = new WayPart ();
 
     private void Start()
     {
@@ -52,7 +54,6 @@ public class WayGenerator : MonoBehaviour
         _wayParts[1].ConnectToEventPlayerOnWay(AddNewWayPart);
 
     }
-
     private Color GetRandomColor() 
     {
         List<Color> colors = new List<Color>();
@@ -65,24 +66,13 @@ public class WayGenerator : MonoBehaviour
         System.Random random = new System.Random();
         return colors[random.Next(0, colors.Count)];
     }
-
-
-    Color tSelectColor;
-
     private void SetSelectedColor(Color color)
     {
-        tSelectColor = color;
-        Debug.Log($"SelectColor");
+        ActionColorSelected?.Invoke(color);
+
     }
     private void TouchColorObject(Color color)
     {
-        if (tSelectColor == color)
-        {
-            Debug.Log($"True");
-        }
-        else
-        {
-            Debug.Log($"False");
-        }
+        ActionPlayerTouchColorObject?.Invoke(color);
     }
 }
