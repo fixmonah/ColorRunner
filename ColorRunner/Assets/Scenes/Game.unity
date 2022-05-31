@@ -1052,7 +1052,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67e25c57e94f464fb141f5d9d3e2933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wayPartPrefab: {fileID: 1483898176261952205, guid: 06fa7f72c3038a74086c704cce594bcd, type: 3}
+  _wayPartPrefabs:
+  - {fileID: 1483898176261952205, guid: c41257aaf75fa5f4ca7027e220078e34, type: 3}
+  - {fileID: 1483898176261952205, guid: c7fdccb90b39ac04e89b869543fc6381, type: 3}
+  - {fileID: 1483898176261952205, guid: 06fa7f72c3038a74086c704cce594bcd, type: 3}
   _colors:
   - {r: 1, g: 0, b: 0, a: 0}
   - {r: 1, g: 0.5019608, b: 0, a: 0}

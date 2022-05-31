@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WayGenerator : MonoBehaviour
 {
-    [SerializeField] private WayPart _wayPartPrefab;
+    [SerializeField] private WayPart[] _wayPartPrefabs;
     [SerializeField] private Color[] _colors;
 
     public Action<Color> ActionColorSelected;
@@ -31,9 +31,13 @@ public class WayGenerator : MonoBehaviour
 
         _wayParts[1].ConnectToEventPlayerOnWay(AddNewWayPart);
     }
+
+    
     private WayPart InstantiateWayPart(Vector3 position) 
     {
-        WayPart wayPart = Instantiate(_wayPartPrefab, position, Quaternion.identity, transform);
+        System.Random random = new System.Random();
+        WayPart prefab = _wayPartPrefabs[random.Next(0, _wayPartPrefabs.Length)];
+        WayPart wayPart = Instantiate(prefab, position, Quaternion.identity, transform);
         return wayPart;
     }
     private void AddNewWayPart()

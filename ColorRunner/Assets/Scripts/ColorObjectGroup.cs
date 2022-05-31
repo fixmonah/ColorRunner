@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ColorObjectGroup : MonoBehaviour
 {
-    [SerializeField] ColorObject[] colorObjects = null;
+    [SerializeField] private ColorObject[] colorObjects;
 
     public void Init(Color color, Action<Color> action)
     {
